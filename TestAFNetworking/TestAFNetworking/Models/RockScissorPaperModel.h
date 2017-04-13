@@ -1,5 +1,5 @@
 //
-//  CalculatorModel.h
+//  RockScissorPaperModel.h
 //  TestAFNetworking
 //
 //  Created by hooni on 2017. 3. 28..
@@ -8,9 +8,9 @@
 
 #import "BaseModel.h"
 
-@interface CalculatorModel : BaseModel
+@interface RockScissorPaperModel : BaseModel
 
-@property (nonatomic, strong) NSString *score;
+@property (nonatomic, strong) NSString *winner;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

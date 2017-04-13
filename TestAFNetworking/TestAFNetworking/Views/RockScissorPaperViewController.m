@@ -1,41 +1,67 @@
 //
-//  CalculatorViewController.m
+//  RockScissorPaperViewController.m
 //  TestAFNetworking
 //
-//  Created by hooni on 2017. 4. 13..
+//  Created by picomax on 2017. 4. 14..
 //  Copyright © 2017년 hooni. All rights reserved.
 //
 
-#import "CalculatorViewController.h"
-#import "HooniAgent.h"
+#import "RockScissorPaperViewController.h"
+#import "NzeenAgent.h"
 
-@interface CalculatorViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *number1TextField;
-@property (weak, nonatomic) IBOutlet UITextField *number2TextField;
-@property (weak, nonatomic) IBOutlet UITextField *scoreTextField;
-@property (weak, nonatomic) IBOutlet UIButton *optypeButton;
+typedef enum {
+    SignTypeNone = 0,
+    SignTypeRock,
+    SignTypeScissor,
+    SignTypePaper,
+    SignTypeCount
+} SignTypes;
+
+@interface RockScissorPaperViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userSignTextField;
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
 @property (weak, nonatomic) IBOutlet UITextView *requestTextView;
 @property (weak, nonatomic) IBOutlet UITextView *responseTextView;
-
+@property (assign, nonatomic) SignTypes signType;
 @end
 
-@implementation CalculatorViewController
+@implementation RockScissorPaperViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"Calculator";
-    
-    [_number1TextField becomeFirstResponder];
+    self.title = @"Rock Scissor Paper";
 }
 
 - (void)hideKeyboard {
     [self.view endEditing:YES];
 }
 
-- (void)setScore:(NSString *)score {
-    [_scoreTextField setText:score];
+- (void)updateUserSignTextField {
+    [_messageTextField setText:@""];
+    
+    [_requestTextView setText:@""];
+    [_responseTextView setText:@""];
+    
+    switch (_signType) {
+        case SignTypeRock:
+            [_userSignTextField setText:@"Rock"];
+            break;
+            
+        case SignTypeScissor:
+            [_userSignTextField setText:@"Scissor"];
+            break;
+            
+        case SignTypePaper:
+            [_userSignTextField setText:@"Paper"];
+            break;
+            
+        default:
+            [_userSignTextField setText:@""];
+            break;
+    }
+    [self hideKeyboard];
 }
 
 - (void)logRequestData:(NSMutableDictionary *)dictionary {
@@ -78,20 +104,23 @@
     }
 }
 
+- (void)setMessage:(NSString *)message {
+    [_messageTextField setText:message];
+}
+
+- (IBAction)userSignButtonTapped:(id)sender {
+    _signType = (_signType + 1) % SignTypeCount;
+    [self updateUserSignTextField];
+}
+
 - (IBAction)submitButtonTapped:(id)sender {
-    NSString *number1 = _number1TextField.text;
-    NSString *number2 = _number2TextField.text;
-    NSString *optype = @"plus";
+    NSString *userSign = _userSignTextField.text;
     
-    if(number1 == nil || [number1 length] < 1){
-        [_number1TextField becomeFirstResponder];
+    if(userSign == nil || [userSign length] < 1){
         return;
     }
     
-    if(number2 == nil || [number2 length] < 1){
-        [_number2TextField becomeFirstResponder];
-        return;
-    }
+    userSign = [userSign lowercaseString];
     
     [self hideKeyboard];
     
@@ -100,15 +129,13 @@
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:@"0.1" forKey:@"ver"];
     [params setObject:@"json" forKey:@"response_format"];
-    [params setObject:number1 forKey:@"number1"];
-    [params setObject:number2 forKey:@"number2"];
-    [params setObject:optype forKey:@"optype"];
     [params setObject:@"ios" forKey:@"osinfo"];
+    [params setObject:userSign forKey:@"user_sign"];
     
     [self logRequestData:params];
     
-    [CalculatorAgent getDataWithParameters:params
-                                     block:^(CalculatorModel *model) {
+    [RockScissorPaperAgent getDataWithParameters:params
+                                     block:^(RockScissorPaperModel *model) {
                                          // NSLog(@"%@", model);
                                          if(model == nil){
                                              return;
@@ -122,24 +149,14 @@
                                          
                                          if([[model.result lowercaseString] isEqualToString:@"ok"] == YES) {
                                              //NSLog(@"result = %@", model);
-                                             NSLog(@"score : %@", model.score);
-                                             [weakSelf setScore:model.score];
+                                             NSLog(@"score : %@", model.winner);
+                                             NSString *messageString = [NSString stringWithFormat:@"Winner is %@, %@", model.winner, model.message];
+                                             [weakSelf setMessage:messageString];
                                          }else{
                                              //NSLog(@"error = %@", model.error);
                                              NSLog(@"error : %@", model.message);
                                          }
                                      }];
-}
-
-- (IBAction)resetButtonTapped:(id)sender {
-    [_number1TextField setText:@""];
-    [_number2TextField setText:@""];
-    [_scoreTextField setText:@""];
-    
-    [_requestTextView setText:@""];
-    [_responseTextView setText:@""];
-    
-    [self hideKeyboard];
 }
 
 - (IBAction)dismissKeyboard:(id)sender {

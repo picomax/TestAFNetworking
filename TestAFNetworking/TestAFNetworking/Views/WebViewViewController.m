@@ -1,6 +1,6 @@
 //
 //  WebViewViewController.m
-//  TestAFNetworkingHooni
+//  TestAFNetworking
 //
 //  Created by hooni on 2017. 3. 21..
 //  Copyright © 2017년 hooni. All rights reserved.
@@ -30,6 +30,7 @@ NSString *const HostNameForKBOClub = @"https://hooni.net";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"WKWebView";
     
     self.wkWebView = [[WKWebView alloc] initWithFrame:self.view.frame];
     [self.wkWebView setNavigationDelegate:self];

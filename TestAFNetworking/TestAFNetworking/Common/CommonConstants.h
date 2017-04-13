@@ -1,6 +1,6 @@
 //
 //  CommonConstants.h
-//  TestAFNetworkingHooni
+//  TestAFNetworking
 //
 //  Created by hooni on 2017. 2. 15..
 //  Copyright © 2017년 hooni. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  MainViewController.m
-//  TestAFNetworkingHooni
+//  TestAFNetworking
 //
 //  Created by hooni on 2017. 3. 6..
 //  Copyright © 2017년 hooni. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "CalculatorViewController.h"
+#import "RockScissorPaperViewController.h"
 #import "WebViewViewController.h"
 
 @interface MainViewController ()
@@ -18,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.    
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (IBAction)testCalculatorButtonTapped:(id)sender {
@@ -26,6 +27,10 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+- (IBAction)testRockScissorPaperButtonTapped:(id)sender {
+    RockScissorPaperViewController *viewController = [[RockScissorPaperViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (IBAction)testListViewButtonTapped:(id)sender {
     
