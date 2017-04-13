@@ -110,7 +110,7 @@ typedef void (^taskFailureBlock)(NSURLSessionTask *task, NSError *error);
             dataModel.reason = nil;
         */
         
-#warning exception!
+//#warning exception!
         //TODO: 서버 에러면, 팝업 띄우기
         // [[NSNotificationCenter defaultCenter] postNotificationName:NetworkErrorPopupNotificationKey object:nil userInfo:nil];
         
