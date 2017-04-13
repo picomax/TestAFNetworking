@@ -63,13 +63,13 @@
                         <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="aas-2c-jXs"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YIe-WK-POP">
-                    <rect key="frame" x="205" y="105" width="50" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YIe-WK-POP">
+                    <rect key="frame" x="118" y="105" width="70" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="lnh-rQ-Q5n"/>
+                        <constraint firstAttribute="width" constant="70" id="lnh-rQ-Q5n"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Simple Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdW-Xi-a0O">
@@ -85,27 +85,26 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0jf-Tw-ZkO">
-                    <rect key="frame" x="305" y="105" width="50" height="30"/>
+                    <rect key="frame" x="216" y="105" width="139" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="9kU-jL-tS8"/>
-                        <constraint firstAttribute="width" constant="50" id="YzA-RU-R2D"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWW-1j-0lc">
-                    <rect key="frame" x="165" y="105" width="30" height="30"/>
+                    <rect key="frame" x="92" y="105" width="24" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="hxv-gF-hic"/>
+                        <constraint firstAttribute="width" constant="24" id="hxv-gF-hic"/>
                     </constraints>
                     <state key="normal" title="+"/>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="N/A" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7g-qk-6k3">
-                    <rect key="frame" x="20" y="367" width="335" height="100"/>
+                    <rect key="frame" x="20" y="387" width="335" height="120"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="ITH-YZ-1A0"/>
+                        <constraint firstAttribute="height" constant="120" id="ITH-YZ-1A0"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -119,19 +118,19 @@
                     </userDefinedRuntimeAttributes>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAL-Lj-ExW">
-                    <rect key="frame" x="265" y="105" width="30" height="30"/>
+                    <rect key="frame" x="190" y="105" width="24" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="Kay-sz-sjq"/>
+                        <constraint firstAttribute="width" constant="24" id="Kay-sz-sjq"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="N/A" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-cq-Jk2">
-                    <rect key="frame" x="20" y="225" width="335" height="100"/>
+                    <rect key="frame" x="20" y="225" width="335" height="120"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="7qA-aC-qIE"/>
+                        <constraint firstAttribute="height" constant="120" id="7qA-aC-qIE"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -144,17 +143,17 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDU-ET-X6K">
-                    <rect key="frame" x="105" y="105" width="50" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDU-ET-X6K">
+                    <rect key="frame" x="20" y="105" width="70" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="zzG-x6-z0U"/>
+                        <constraint firstAttribute="width" constant="70" id="zzG-x6-z0U"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYV-0S-Nht">
-                    <rect key="frame" x="20" y="345" width="103.5" height="18"/>
+                    <rect key="frame" x="20" y="365" width="103.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -169,10 +168,11 @@
                 <constraint firstItem="G7g-qk-6k3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="A2s-dm-fss"/>
                 <constraint firstItem="UkX-HG-Wzk" firstAttribute="top" secondItem="aJG-W1-5GK" secondAttribute="bottom" constant="24" id="BIZ-zw-0Dp"/>
                 <constraint firstAttribute="trailing" secondItem="0jf-Tw-ZkO" secondAttribute="trailing" constant="20" id="EPO-LN-EW5"/>
+                <constraint firstItem="NDU-ET-X6K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Jcn-qu-pck"/>
                 <constraint firstItem="aJG-W1-5GK" firstAttribute="leading" secondItem="jsC-0z-UUS" secondAttribute="trailing" constant="10" id="K11-et-O4E"/>
                 <constraint firstItem="OAL-Lj-ExW" firstAttribute="top" secondItem="0jf-Tw-ZkO" secondAttribute="top" id="SVJ-jk-AhT"/>
                 <constraint firstItem="jcR-cq-Jk2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="To6-sB-KbA"/>
-                <constraint firstItem="YIe-WK-POP" firstAttribute="leading" secondItem="XWW-1j-0lc" secondAttribute="trailing" constant="10" id="U1b-Z9-wMW"/>
+                <constraint firstItem="YIe-WK-POP" firstAttribute="leading" secondItem="XWW-1j-0lc" secondAttribute="trailing" constant="2" id="U1b-Z9-wMW"/>
                 <constraint firstItem="NDU-ET-X6K" firstAttribute="height" secondItem="XWW-1j-0lc" secondAttribute="height" id="Uik-7U-yxI"/>
                 <constraint firstItem="tYV-0S-Nht" firstAttribute="top" secondItem="jcR-cq-Jk2" secondAttribute="bottom" constant="20" id="VYY-L6-xsU"/>
                 <constraint firstItem="XWW-1j-0lc" firstAttribute="top" secondItem="YIe-WK-POP" secondAttribute="top" id="Vlh-VE-XZY"/>
@@ -186,12 +186,12 @@
                 <constraint firstItem="tYV-0S-Nht" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="hXg-vG-OyW"/>
                 <constraint firstItem="jsC-0z-UUS" firstAttribute="top" secondItem="aJG-W1-5GK" secondAttribute="top" id="jsV-Hs-6xH"/>
                 <constraint firstItem="G7g-qk-6k3" firstAttribute="top" secondItem="tYV-0S-Nht" secondAttribute="bottom" constant="4" id="m1x-4i-pu6"/>
-                <constraint firstItem="0jf-Tw-ZkO" firstAttribute="leading" secondItem="OAL-Lj-ExW" secondAttribute="trailing" constant="10" id="mb0-8b-q5L"/>
+                <constraint firstItem="0jf-Tw-ZkO" firstAttribute="leading" secondItem="OAL-Lj-ExW" secondAttribute="trailing" constant="2" id="mb0-8b-q5L"/>
                 <constraint firstItem="NDU-ET-X6K" firstAttribute="top" secondItem="FdW-Xi-a0O" secondAttribute="bottom" constant="14" id="mcv-SR-LIZ"/>
                 <constraint firstItem="NDU-ET-X6K" firstAttribute="top" secondItem="XWW-1j-0lc" secondAttribute="top" id="nao-Bq-Rps"/>
                 <constraint firstItem="FdW-Xi-a0O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="tgt-hm-D6Z"/>
-                <constraint firstItem="XWW-1j-0lc" firstAttribute="leading" secondItem="NDU-ET-X6K" secondAttribute="trailing" constant="10" id="wnB-VY-6o0"/>
-                <constraint firstItem="OAL-Lj-ExW" firstAttribute="leading" secondItem="YIe-WK-POP" secondAttribute="trailing" constant="10" id="y55-76-Jd0"/>
+                <constraint firstItem="XWW-1j-0lc" firstAttribute="leading" secondItem="NDU-ET-X6K" secondAttribute="trailing" constant="2" id="wnB-VY-6o0"/>
+                <constraint firstItem="OAL-Lj-ExW" firstAttribute="leading" secondItem="YIe-WK-POP" secondAttribute="trailing" constant="2" id="y55-76-Jd0"/>
                 <constraint firstItem="YIe-WK-POP" firstAttribute="top" secondItem="OAL-Lj-ExW" secondAttribute="top" id="yzQ-u9-kbz"/>
             </constraints>
             <connections>
