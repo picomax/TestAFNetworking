@@ -51,7 +51,19 @@
     }
 }
 
-- (void)logResponseData:(NSMutableDictionary *)dictionary {
+- (void)logResponseData:(NSDictionary *)dictionary {
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+        [_responseTextView setText:[NSString stringWithFormat:@"%@", error]];
+    } else {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        [_responseTextView setText:jsonString];
+    }
 }
 
 - (IBAction)submitButtonTapped:(id)sender {
@@ -68,6 +80,8 @@
         [_number2TextField becomeFirstResponder];
         return;
     }
+    
+    [self hideKeyboard];
     
     __weak __typeof__(self) weakSelf = self;
     
@@ -88,6 +102,8 @@
                                              return;
                                          }
                                          
+                                         [weakSelf logResponseData:model.originalResponse];
+                                         
                                          if(model.result == nil) {
                                              return;
                                          }
@@ -107,6 +123,9 @@
     [_number1TextField setText:@""];
     [_number2TextField setText:@""];
     [_scoreTextField setText:@""];
+    
+    [_requestTextView setText:@""];
+    [_responseTextView setText:@""];
     
     [self hideKeyboard];
 }

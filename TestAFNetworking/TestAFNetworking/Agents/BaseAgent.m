@@ -101,6 +101,7 @@ typedef void (^taskFailureBlock)(NSURLSessionTask *task, NSError *error);
         } else {
             dataModel = [[_modelClass alloc] initWithDictionary:bodyData];
         }
+        dataModel.originalResponse = bodyData;
         /*
         if ([[responseData objectForKey:@"data"] isKindOfClass:[NSNull class]]) {
             dataModel.result = [NSError errorWithDomain:@"data null" code:404 userInfo:@{@"data":@"data_null"}];

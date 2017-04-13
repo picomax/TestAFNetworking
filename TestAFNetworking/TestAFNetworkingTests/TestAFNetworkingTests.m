@@ -39,7 +39,6 @@
     }];
 }
 
-
 - (void)testCalculatorAgent {
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:@"0.1" forKey:@"ver"];

@@ -13,7 +13,7 @@
 @property(strong, nonatomic) NSString *ver;
 @property(strong, nonatomic) NSString *result;
 @property(strong, nonatomic) NSString *message;
-@property(strong, nonatomic) NSString *originalResponse;
+@property(strong, nonatomic) NSDictionary *originalResponse;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 - (void)__debugLog;
