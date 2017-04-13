@@ -1,14 +1,14 @@
 //
-//  NSString+Oksusu.m
+//  NSString+Hooni.m
 //  TestAFNetworkingHooni
 //
 //  Created by hooni on 2016. 7. 12..
 //  Copyright © 2017년 hooni. All rights reserved.
 //
 
-#import "NSString+Oksusu.h"
+#import "NSString+Hooni.h"
 
-@implementation NSString (Oksusu)
+@implementation NSString (Hooni)
 - (NSInteger)indexOf:(NSString *)text {
     NSRange range = [self rangeOfString:text];
     if ( range.length > 0 ) {

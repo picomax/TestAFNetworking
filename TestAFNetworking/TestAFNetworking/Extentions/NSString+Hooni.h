@@ -1,5 +1,5 @@
 //
-//  NSString+Oksusu.h
+//  NSString+Hooni.h
 //  TestAFNetworkingHooni
 //
 //  Created by hooni on 2016. 7. 12..
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (Oksusu)
+@interface NSString (Hooni)
 - (NSInteger)indexOf:(NSString *)text;
 - (BOOL)isEmpty;
 @end
