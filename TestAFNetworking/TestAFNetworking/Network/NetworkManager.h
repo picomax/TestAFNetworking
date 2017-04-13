@@ -8,10 +8,10 @@
 
 #import "AFHTTPSessionManager.h"
 
-@interface HooniNetwork : AFHTTPSessionManager
+@interface CalculatorNetwork : AFHTTPSessionManager
 + (instancetype)sharedInstanceWithType:(NSString *)type;
 @end
 
-@interface NzeenNetwork : AFHTTPSessionManager
+@interface RockScissorPaperNetwork : AFHTTPSessionManager
 + (instancetype)sharedInstanceWithType:(NSString *)type;
 @end

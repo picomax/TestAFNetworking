@@ -32,7 +32,11 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-- (IBAction)testListViewButtonTapped:(id)sender {
+- (IBAction)testOpTypeListButtonTapped:(id)sender {
+    
+}
+
+- (IBAction)testUserSignListButtonTapped:(id)sender {
     
 }
 

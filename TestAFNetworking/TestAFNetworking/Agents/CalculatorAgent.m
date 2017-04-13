@@ -1,27 +1,27 @@
 //
-//  HooniAgent.m
+//  CalculatorAgent.m
 //  TestAFNetworking
 //
 //  Created by hooni on 2017. 3. 28..
 //  Copyright © 2017년 hooni. All rights reserved.
 //
 
-#import "HooniAgent.h"
+#import "CalculatorAgent.h"
 
 @implementation CalculatorAgent
 - (void)doSetOptions {
     self.method = BaseAgentMethodPost;
     self.path = @"/api/test/calculator.php";
     self.modelClass = [CalculatorModel class];
-    self.networName = @"HooniNetwork";
+    self.networName = @"CalculatorNetwork";
 }
 @end
 
-@implementation ListViewAgent
+@implementation OpTypeListAgent
 - (void)doSetOptions {
     self.method = BaseAgentMethodPost;
-    self.path = @"/api/test/listview.php";
-    self.modelClass = [CalculatorModel class];
-    self.networName = @"HooniNetwork";
+    self.path = @"/api/test/optypelist.php";
+    self.modelClass = [OpTypeListModel class];
+    self.networName = @"CalculatorNetwork";
 }
 @end

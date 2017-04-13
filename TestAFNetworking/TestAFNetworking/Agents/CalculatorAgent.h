@@ -1,5 +1,5 @@
 //
-//  HooniAgent.h
+//  CalculatorAgent.h
 //  TestAFNetworking
 //
 //  Created by hooni on 2017. 3. 28..
@@ -8,9 +8,10 @@
 
 #import "BaseAgent.h"
 #import "CalculatorModel.h"
+#import "OpTypeListModel.h"
 
 @interface CalculatorAgent : BaseAgent
 @end
 
-@interface ListViewAgent : BaseAgent
+@interface OpTypeListAgent : BaseAgent
 @end

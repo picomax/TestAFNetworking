@@ -10,16 +10,16 @@
 #import "ServerHostManager.h"
 #import "Util.h"
 
-@implementation HooniNetwork
+@implementation CalculatorNetwork
 //type = json, bson, xml
 + (instancetype)sharedInstanceWithType:(NSString *)type {
-    static HooniNetwork *sharedInstance = nil;
+    static CalculatorNetwork *sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
         NSString *hostUrl = [[ServerHostManager sharedInstance] hostUrlForHooni];
         
-        sharedInstance = [[HooniNetwork alloc] initWithBaseURL:[NSURL URLWithString:hostUrl]];
+        sharedInstance = [[CalculatorNetwork alloc] initWithBaseURL:[NSURL URLWithString:hostUrl]];
         sharedInstance.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         sharedInstance.requestSerializer = [AFJSONRequestSerializer serializer];
         //sharedInstance.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -64,16 +64,16 @@
 @end
 
 
-@implementation NzeenNetwork
+@implementation RockScissorPaperNetwork
 //type = json, bson, xml
 + (instancetype)sharedInstanceWithType:(NSString *)type {
-    static NzeenNetwork *sharedInstance = nil;
+    static RockScissorPaperNetwork *sharedInstance = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
         NSString *hostUrl = [[ServerHostManager sharedInstance] hostUrlForNzeen];
         
-        sharedInstance = [[NzeenNetwork alloc] initWithBaseURL:[NSURL URLWithString:hostUrl]];
+        sharedInstance = [[RockScissorPaperNetwork alloc] initWithBaseURL:[NSURL URLWithString:hostUrl]];
         sharedInstance.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         sharedInstance.requestSerializer = [AFJSONRequestSerializer serializer];
         //sharedInstance.responseSerializer = [AFHTTPResponseSerializer serializer];

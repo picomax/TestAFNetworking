@@ -6,8 +6,8 @@
 //  Copyright © 2017년 hooni. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface RockScissorPaperViewController : UIViewController
+@interface RockScissorPaperViewController : BaseViewController
 
 @end

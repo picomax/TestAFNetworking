@@ -7,7 +7,7 @@
 //
 
 #import "CalculatorViewController.h"
-#import "HooniAgent.h"
+#import "CalculatorAgent.h"
 
 @interface CalculatorViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *number1TextField;
@@ -30,52 +30,8 @@
     [_number1TextField becomeFirstResponder];
 }
 
-- (void)hideKeyboard {
-    [self.view endEditing:YES];
-}
-
 - (void)setScore:(NSString *)score {
     [_scoreTextField setText:score];
-}
-
-- (void)logRequestData:(NSMutableDictionary *)dictionary {
-    if(dictionary == nil){
-        [_requestTextView setText:@"N/A"];
-        return;
-    }
-    
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-        [_requestTextView setText:[NSString stringWithFormat:@"%@", error]];
-    } else {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        [_requestTextView setText:jsonString];
-    }
-}
-
-- (void)logResponseData:(NSDictionary *)dictionary {
-    if(dictionary == nil){
-        [_responseTextView setText:@"N/A"];
-        return;
-    }
-    
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-        [_responseTextView setText:[NSString stringWithFormat:@"%@", error]];
-    } else {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        [_responseTextView setText:jsonString];
-    }
 }
 
 - (IBAction)submitButtonTapped:(id)sender {
@@ -105,7 +61,7 @@
     [params setObject:optype forKey:@"optype"];
     [params setObject:@"ios" forKey:@"osinfo"];
     
-    [self logRequestData:params];
+    [self logRequestData:params target:_requestTextView];
     
     [CalculatorAgent getDataWithParameters:params
                                      block:^(CalculatorModel *model) {
@@ -114,7 +70,7 @@
                                              return;
                                          }
                                          
-                                         [weakSelf logResponseData:model.originalResponse];
+                                         [weakSelf logResponseData:model.originalResponse target:weakSelf.responseTextView];
                                          
                                          if(model.result == nil) {
                                              return;

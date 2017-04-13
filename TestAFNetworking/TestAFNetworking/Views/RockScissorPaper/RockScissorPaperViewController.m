@@ -7,7 +7,7 @@
 //
 
 #import "RockScissorPaperViewController.h"
-#import "NzeenAgent.h"
+#import "RockScissorPaperAgent.h"
 
 typedef enum {
     SignTypeNone = 0,
@@ -34,10 +34,6 @@ typedef enum {
     self.title = @"Rock Scissor Paper";
 }
 
-- (void)hideKeyboard {
-    [self.view endEditing:YES];
-}
-
 - (void)updateUserSignTextField {
     [_messageTextField setText:@""];
     
@@ -62,46 +58,6 @@ typedef enum {
             break;
     }
     [self hideKeyboard];
-}
-
-- (void)logRequestData:(NSMutableDictionary *)dictionary {
-    if(dictionary == nil){
-        [_requestTextView setText:@"N/A"];
-        return;
-    }
-    
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-        [_requestTextView setText:[NSString stringWithFormat:@"%@", error]];
-    } else {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        [_requestTextView setText:jsonString];
-    }
-}
-
-- (void)logResponseData:(NSDictionary *)dictionary {
-    if(dictionary == nil){
-        [_responseTextView setText:@"N/A"];
-        return;
-    }
-    
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-        [_responseTextView setText:[NSString stringWithFormat:@"%@", error]];
-    } else {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        [_responseTextView setText:jsonString];
-    }
 }
 
 - (void)setMessage:(NSString *)message {
@@ -132,7 +88,7 @@ typedef enum {
     [params setObject:@"ios" forKey:@"osinfo"];
     [params setObject:userSign forKey:@"user_sign"];
     
-    [self logRequestData:params];
+    [self logRequestData:params target:_requestTextView];
     
     [RockScissorPaperAgent getDataWithParameters:params
                                      block:^(RockScissorPaperModel *model) {
@@ -141,7 +97,7 @@ typedef enum {
                                              return;
                                          }
                                          
-                                         [weakSelf logResponseData:model.originalResponse];
+                                         [weakSelf logResponseData:model.originalResponse target:weakSelf.responseTextView];
                                          
                                          if(model.result == nil) {
                                              return;
