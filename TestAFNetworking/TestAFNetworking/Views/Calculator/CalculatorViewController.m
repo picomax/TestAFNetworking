@@ -7,7 +7,7 @@
 //
 
 #import "CalculatorViewController.h"
-#import "CalculatorAgent.h"
+#import "Agents.h"
 
 @interface CalculatorViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *number1TextField;

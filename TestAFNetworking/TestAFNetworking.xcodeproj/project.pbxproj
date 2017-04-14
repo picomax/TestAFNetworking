@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04DCF5E81E9FCDC200A36460 /* RockScissorPaperAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DCF5E71E9FCDC200A36460 /* RockScissorPaperAgent.m */; };
 		04DCF6131E9FE3B700A36460 /* CalculatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DCF60B1E9FE3B700A36460 /* CalculatorModel.m */; };
 		04DCF6141E9FE3B700A36460 /* OpTypeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DCF60D1E9FE3B700A36460 /* OpTypeListModel.m */; };
 		04DCF6151E9FE3B700A36460 /* RockScissorPaperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DCF6101E9FE3B700A36460 /* RockScissorPaperModel.m */; };
@@ -24,7 +23,7 @@
 		F83D57F61E9F5C3400D8A16B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F83D57F41E9F5C3400D8A16B /* LaunchScreen.storyboard */; };
 		F83D58011E9F5C3500D8A16B /* TestAFNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D58001E9F5C3500D8A16B /* TestAFNetworkingTests.m */; };
 		F83D587E1E9F5C7600D8A16B /* BaseAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D580D1E9F5C7600D8A16B /* BaseAgent.m */; };
-		F83D587F1E9F5C7600D8A16B /* CalculatorAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D580F1E9F5C7600D8A16B /* CalculatorAgent.m */; };
+		F83D587F1E9F5C7600D8A16B /* Agents.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D580F1E9F5C7600D8A16B /* Agents.m */; };
 		F83D58801E9F5C7600D8A16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D58111E9F5C7600D8A16B /* AppDelegate.m */; };
 		F83D58811E9F5C7600D8A16B /* CommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D58141E9F5C7600D8A16B /* CommonConstants.m */; };
 		F83D58821E9F5C7600D8A16B /* EventConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D58171E9F5C7600D8A16B /* EventConstants.m */; };
@@ -61,8 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04DCF5E61E9FCDC200A36460 /* RockScissorPaperAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RockScissorPaperAgent.h; sourceTree = "<group>"; };
-		04DCF5E71E9FCDC200A36460 /* RockScissorPaperAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RockScissorPaperAgent.m; sourceTree = "<group>"; };
 		04DCF60A1E9FE3B700A36460 /* CalculatorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorModel.h; sourceTree = "<group>"; };
 		04DCF60B1E9FE3B700A36460 /* CalculatorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorModel.m; sourceTree = "<group>"; };
 		04DCF60C1E9FE3B700A36460 /* OpTypeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpTypeListModel.h; sourceTree = "<group>"; };
@@ -93,8 +90,8 @@
 		F83D58021E9F5C3500D8A16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F83D580C1E9F5C7600D8A16B /* BaseAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAgent.h; sourceTree = "<group>"; };
 		F83D580D1E9F5C7600D8A16B /* BaseAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAgent.m; sourceTree = "<group>"; };
-		F83D580E1E9F5C7600D8A16B /* CalculatorAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorAgent.h; sourceTree = "<group>"; };
-		F83D580F1E9F5C7600D8A16B /* CalculatorAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorAgent.m; sourceTree = "<group>"; };
+		F83D580E1E9F5C7600D8A16B /* Agents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agents.h; sourceTree = "<group>"; };
+		F83D580F1E9F5C7600D8A16B /* Agents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agents.m; sourceTree = "<group>"; };
 		F83D58101E9F5C7600D8A16B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F83D58111E9F5C7600D8A16B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F83D58131E9F5C7600D8A16B /* CommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonConstants.h; sourceTree = "<group>"; };
@@ -278,10 +275,8 @@
 			children = (
 				F83D580C1E9F5C7600D8A16B /* BaseAgent.h */,
 				F83D580D1E9F5C7600D8A16B /* BaseAgent.m */,
-				F83D580E1E9F5C7600D8A16B /* CalculatorAgent.h */,
-				F83D580F1E9F5C7600D8A16B /* CalculatorAgent.m */,
-				04DCF5E61E9FCDC200A36460 /* RockScissorPaperAgent.h */,
-				04DCF5E71E9FCDC200A36460 /* RockScissorPaperAgent.m */,
+				F83D580E1E9F5C7600D8A16B /* Agents.h */,
+				F83D580F1E9F5C7600D8A16B /* Agents.m */,
 			);
 			path = Agents;
 			sourceTree = "<group>";
@@ -539,7 +534,7 @@
 				F83D58821E9F5C7600D8A16B /* EventConstants.m in Sources */,
 				F83D58921E9F5C7600D8A16B /* UIView+XIBLoading.m in Sources */,
 				F83D58831E9F5C7600D8A16B /* OpenURLParser.m in Sources */,
-				F83D587F1E9F5C7600D8A16B /* CalculatorAgent.m in Sources */,
+				F83D587F1E9F5C7600D8A16B /* Agents.m in Sources */,
 				04DCF6151E9FE3B700A36460 /* RockScissorPaperModel.m in Sources */,
 				F83D58A71E9F5C7600D8A16B /* NetworkManager.m in Sources */,
 				F83D58871E9F5C7600D8A16B /* NSString+Hooni.m in Sources */,
@@ -555,7 +550,6 @@
 				F83D58801E9F5C7600D8A16B /* AppDelegate.m in Sources */,
 				F83D58851E9F5C7600D8A16B /* Util.m in Sources */,
 				F83D58991E9F5C7600D8A16B /* BSONCodec.m in Sources */,
-				04DCF5E81E9FCDC200A36460 /* RockScissorPaperAgent.m in Sources */,
 				F83D58A91E9F5C7600D8A16B /* main.m in Sources */,
 				04DCF6141E9FE3B700A36460 /* OpTypeListModel.m in Sources */,
 			);

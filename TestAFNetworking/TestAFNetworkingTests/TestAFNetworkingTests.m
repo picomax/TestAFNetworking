@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Util.h"
-#import "CalculatorAgent.h"
+#import "Agents.h"
 
 @interface TestAFNetworkingTests : XCTestCase
 @property(nonatomic, assign) BOOL bTestComplete;

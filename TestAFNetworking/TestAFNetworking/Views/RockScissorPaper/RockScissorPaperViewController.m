@@ -7,7 +7,7 @@
 //
 
 #import "RockScissorPaperViewController.h"
-#import "RockScissorPaperAgent.h"
+#import "Agents.h"
 
 typedef enum {
     SignTypeNone = 0,
